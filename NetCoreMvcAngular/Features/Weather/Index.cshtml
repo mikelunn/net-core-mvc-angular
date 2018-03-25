@@ -1,0 +1,7 @@
+﻿@using NetCoreMvcAngular.Infrastructure
+@model IEnumerable<NetCoreMvcAngular.Features.Weather.WeatherModel>
+
+<app-root data-init='@Html.JsonFor(Model)'>
+    <div class="loader"></div>
+</app-root>
+@Html.Partial("_SpaScriptsPartial")

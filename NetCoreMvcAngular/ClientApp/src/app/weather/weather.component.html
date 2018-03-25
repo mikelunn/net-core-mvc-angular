@@ -1,0 +1,19 @@
+<table *ngIf="model.length > 0; else empty" class="table">
+  <thead>
+  <tr>
+    <th>Date</th>
+    <th>Temp. (C)</th>
+    <th>Temp. (F)</th>
+    <th>Summary</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of model">
+    <td>{{ item.dateFormatted }}</td>
+    <td>{{ item.temperatureC }}</td>
+    <td>{{ item.temperatureF }}</td>
+    <td>{{ item.summary }}</td>
+  </tr>
+  </tbody>
+</table>
+<ng-template #empty>No data</ng-template>
