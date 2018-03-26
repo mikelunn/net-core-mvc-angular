@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm start --prefix ./ClientApp"
+    "start": "npm start --prefix ./ClientApp",
+    "build": "npm run build --prefix ./ClientApp"
   },
   "author": "",
   "license": "ISC"

@@ -5,6 +5,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,6 +13,14 @@ namespace NetCoreMvcAngular.Infrastructure
 {
     public static class Extensions
     {
+		public static IHtmlContent LoadSpaScripts(this IHtmlHelper helper)
+		{
+			var html =
+				File.ReadAllText(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/dist", "index.html"));
+
+			return helper.Raw(html);
+
+		}
 		public static string ToJson<T>(this T obj, bool includeNull = true)
 		{
 			var settings = new JsonSerializerSettings
